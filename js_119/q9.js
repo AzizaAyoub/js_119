@@ -14,7 +14,7 @@ const AMAA_GROSS_PROFIT = [
 function compareFn(a, b) {
   for (let key1 in a) {
     for (let key2 in b) {
-      return b[key2] - a[key1];
+      return (b[key2] - a[key1]);
     }
   }
 }

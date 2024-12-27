@@ -29,3 +29,36 @@ function foo(mealObj) {
 }
 
 console.log(foo(MEALS));
+
+// Question 12:  
+// In the following code, what is the purpose of the summarizeMenu function and how is it achieved?  
+// Does summarizeMenu have any side effects?  
+
+const MENU_ITEMS = {  
+  starter: "spring rolls",  
+  mainDish: "grilled chicken",  
+  dessert: {  
+    sweet: "pavlova",  
+    fruit: "mango sorbet",  
+  },  
+  drink: "white wine",  
+};  
+
+function summarizeMenu(menuObj) {  
+  let copiedMenu = {};  
+
+  for (let item in menuObj) {  
+    if (typeof menuObj[item] !== "object") {  
+      copiedMenu[item] = menuObj[item];  
+    } else {  
+      copiedMenu[item] = JSON.parse(JSON.stringify(menuObj[item]));  
+    }  
+  }  
+
+  return copiedMenu;  
+}  
+
+console.log(summarizeMenu(MENU_ITEMS));
+
+
+let string = 'abcdEFGgedccab';
